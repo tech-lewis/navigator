@@ -1,7 +1,6 @@
 import 'dart:collection';
 import 'dart:math';
-
-import 'package:mazegame/position.dart';
+import 'package:navigator/position.dart';
 
 ///
 /// @Description: 随机队列（入队：队头或队尾，出队：队头或队尾）
