@@ -1,5 +1,11 @@
-import 'package:flutter/material.dart';
+///
+/// @Description: 迷宫游戏视图层和控制层
+/// @Author: 沫小亮。
+/// @CreateDate: 2020/4/13  11:24
 import 'package:navigator/widget/GSYTabBarWidget.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:navigator/game.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -23,13 +29,12 @@ class MyApp extends StatelessWidget {
           type: GSYTabBarWidget.BOTTOM_TAB,
           tabItems: [
             new Tab(icon: new Icon(Icons.home)),
-            new Tab(icon: new Icon(Icons.search
-            )),
+            new Tab(icon: new Icon(Icons.games)),
             new Tab(icon: new Icon(Icons.settings)),
           ],
           tabViews: [
             new Icon(Icons.home),
-            new Icon(Icons.search),
+            new MyGame(),
             new Icon(Icons.settings),
           ],
           backgroundColor: Colors.deepOrange,
