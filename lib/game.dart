@@ -45,6 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Timer timer;                   //计时器
   MazeGameModel _model;          //迷宫游戏数据层
 
+
+  ///整个页面dispose时，记得把控制器也dispose掉，释放内存
+  @override
+  void dispose() {
+    timer.cancel();
+    timer = null;
+    super.dispose();
+  }
   //初始化状态
   @override
   void initState() {
