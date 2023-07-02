@@ -115,5 +115,4 @@ class MazeGameModel {
   bool isInArea(int i, int j) {
     return i >= 0 && i < _rowSum && j >= 0 && j < _columnSum;
   }
-
 }

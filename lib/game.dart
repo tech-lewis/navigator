@@ -70,19 +70,19 @@ class _MyHomePageState extends State<MyHomePage> {
     //每一个小方块的宽度和长度（屏幕宽度/列数）
     itemHeight = itemWidth = (gameWidth / columnSum);
     return Scaffold(
-      appBar: PreferredSize(
-          //设置标题栏高度
-          preferredSize: Size.fromHeight(40.0),
-          //标题栏区域
-          child: _appBarWidget()),
+      // appBar: PreferredSize(
+      //     //设置标题栏高度
+      //     preferredSize: Size.fromHeight(40.0),
+      //     //标题栏区域
+      //     child: _appBarWidget()),
       body: ListView(
         children: <Widget>[
           //游戏地图区域
           _gameMapWidget(),
-          //游戏提示与操作栏区域
-          _gameTipWidget(),
           //游戏方向控制区域
           _gameControlWidget(),
+          //游戏提示与操作栏区域
+          _gameTipWidget(),
         ],
       ),
     );
@@ -193,9 +193,11 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.green,
             child: Text("提示"),
           ),
+          Text("方块迷宫"),
+          Text("第" + level.toString() + "关" + "  (" + rowSum.toString() + "x" + columnSum.toString() + ")"),
           Text(
             "剩余时间:" + surplusTime.toString() + "秒",
-            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.deepOrangeAccent),
+            style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.deepOrangeAccent),
           )
         ],
       ),
