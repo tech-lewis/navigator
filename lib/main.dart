@@ -10,6 +10,7 @@ void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  var gameTitle = '';
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -34,12 +35,12 @@ class MyApp extends StatelessWidget {
           ],
           tabViews: [
             new Icon(Icons.home),
-            new MyGame(),
+            new MyGame(gameTitle),
             new Icon(Icons.settings),
           ],
           backgroundColor: Colors.deepOrange,
           indicatorColor: Colors.white,
-          title: "Title"),
+          title: gameTitle),
     );
   }
 }

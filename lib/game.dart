@@ -9,6 +9,8 @@ import 'package:navigator/random_queue.dart';
 import 'maze_game_model.dart';
 
 class MyGame extends StatelessWidget {
+  final String gameTitle;
+  MyGame({ Key key, this.gameTitle}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
@@ -22,14 +24,14 @@ class MyGame extends StatelessWidget {
         primaryColor: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: MyHomePage(title: gameTitle),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
-
+  MyHomePage({Key key, this.title}) : super(key: key);
+  final String title;
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -44,7 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
   bool isTip = false;            //是否使用提示功能
   Timer timer;                   //计时器
   MazeGameModel _model;          //迷宫游戏数据层
-
 
   ///整个页面dispose时，记得把控制器也dispose掉，释放内存
   @override
@@ -201,12 +202,11 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.green,
             child: Text("提示"),
           ),
-          Text("方块迷宫"),
-          Text("第" + level.toString() + "关" + "  (" + rowSum.toString() + "x" + columnSum.toString() + ")"),
-          Text(
-            "剩余时间:" + surplusTime.toString() + "秒",
-            style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.deepOrangeAccent),
-          )
+          ListView(children: <Widget>[
+            Text("第" + level.toString() + "关" + "  (" + rowSum.toString() + "x" + columnSum.toString() + ")"),
+            Text("方块迷宫"),
+          ],)
+
         ],
       ),
     );
