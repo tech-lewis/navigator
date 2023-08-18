@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           ],
           tabViews: [
             new Icon(Icons.home),
-            new MyGame(gameTitle),
+            new MyGame(),
             new Icon(Icons.settings),
           ],
           backgroundColor: Colors.deepOrange,
