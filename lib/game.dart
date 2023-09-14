@@ -9,6 +9,7 @@ import 'package:navigator/random_queue.dart';
 import 'maze_game_model.dart';
 
 class MyGame extends StatelessWidget {
+  String title = '迷宫';
   @override
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
@@ -204,7 +205,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // Text("方块迷宫"),
           Text("第" + level.toString() + "关" + "  (" + rowSum.toString() + "x" + columnSum.toString() + ")"),
           Text(
-            "剩余时间:" + surplusTime.toString() + "秒",
+            "Time:" + surplusTime.toString() + "秒",
             style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.deepOrangeAccent),
           )
         ],
