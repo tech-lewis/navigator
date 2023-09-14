@@ -8,9 +8,7 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // 一秒以后将任务添加至event队列
     new Future.delayed(const Duration(seconds: 2), () {
-      Navigator
-          .of(context)
-          .pushReplacement(new MaterialPageRoute(builder: (context) {
+      Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (context) {
         return new LoginPage();
       }));
     });
