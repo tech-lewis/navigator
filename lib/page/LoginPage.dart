@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:navigator/common/style/MyStyle.dart';
 import 'package:navigator/widget/GSYFlexButton.dart';
 import 'package:navigator/widget/GSYInputWidget.dart';
-
+import 'package:navigator/common/utils/NavigatorUtils.dart';
 class LoginPage extends StatelessWidget {
+
+  static final String sName  = "login";
+
   @override
   Widget build(BuildContext context) {
     return new Container(
-        color: Colors.orange,
+        color: Colors.deepOrange,
         child: new Center(
             child: new Card(
                 elevation: 5.0,
@@ -24,13 +27,15 @@ class LoginPage extends StatelessWidget {
                         new Padding(padding: new EdgeInsets.all(10.0)),
                         new GSYInputWidget(hintText: "11111", iconData: Icons.account_circle),
                         new Padding(padding: new EdgeInsets.all(10.0)),
-                        new GSYInputWidget(hintText: "11111", iconData: Icons.lock_open),
+                        new GSYInputWidget(hintText: "11111", iconData: Icons.lock_open, obscureText: true),
                         new Padding(padding: new EdgeInsets.all(8.0)),
                         new GSYFlexButton(
                           text: GSYStrings.login_text,
                           color: Color(GSYColors.primaryValue),
                           textColor: Color(GSYColors.textWhite),
-                          onPress: () {},
+                          onPress: () {
+                            NavigatorUtils.goHome(context);
+                          },
                         )
                       ],
                     )))));

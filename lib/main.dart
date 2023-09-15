@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:navigator/page/Welcome.dart';
 // import 'package:navigator/widget/GSYTabBarWidget.dart';
-
+import 'package:navigator/page/HomePage.dart';
+import 'package:navigator/page/LoginPage.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -21,6 +22,16 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: new WelcomePage());
+      routes: {
+        WelcomePage.sName: (context) {
+          return WelcomePage();
+        },
+        HomePage.sName: (context) {
+          return HomePage();
+        },
+        LoginPage.sName: (context) {
+          return LoginPage();
+        },
+      });
   }
 }

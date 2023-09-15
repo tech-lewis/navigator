@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ? Colors.blue
                                 : (_model.getEndX() == i && _model.getEndY() == j)
                                 ? Colors.deepOrange
-                                : _model.path[i][j] ? Colors.orange : Colors.white));
+                                : _model.path[i][j] ? Colors.deepOrange : Colors.white));
                   }));
             }),
           ),

@@ -28,9 +28,11 @@ class GSYColors {
   );
 }
 
-class GSYConstant {}
 
+class GSYConstant {}
 
 class GSYStrings {
   static const String login_text = "登录";
+  static const String login_username_hint_text = "请输入您的用户名(admin)";
+  static const String login_password_hint_text = "请输入您的密码(1111)";
 }
